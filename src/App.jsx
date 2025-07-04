@@ -3,6 +3,8 @@ import './App.css'
 import facebookIcon from "./assets/icon-facebook.svg"
 import pinterestIcon from "./assets/icon-pinterest.svg"
 import instagramIcon from "./assets/icon-instagram.svg"
+import { useEffect } from 'react'
+import Timer from './components/Timer'
 
 function App() {
   const timerStart = {
@@ -13,10 +15,25 @@ function App() {
   }
   const [timer, setTimer] = useState(timerStart);
 
-  const upperSquareClass = `bg-[var(--dark-desaturated-blue)] h-[34px] w-[70px] rounded-md`
-  const secondSquareClass = `bg-[var(--dark-desaturated-blue2)] h-[34px] w-[70px] rounded-md`
-  const seperatorClass = `bg-[var(--dark-desaturated-blue2)] h-1 w-[60px]`
-  const titleClass = `text-[var(--grayish-blue)] text-[8px] uppercase tracking-[.2rem] mt-2`
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimer(prev => {
+        const {days, hours, minutes, seconds} = prev
+
+        if (days === 0 && hours === 0 && minutes === 0 && seconds === 0){
+          return timerStart
+        } 
+
+        if (seconds > 0) return {...prev, seconds: seconds - 1}
+        if (minutes > 0) return {...prev, minutes: minutes - 1, seconds: 59}
+        if (hours > 0) return {...prev, hours: hours - 1, minutes: 59, seconds: 59}
+        return {days: days -1, hours: 23, minutes: 59, seconds: 59}
+      })
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <div className='font_red main_bg min-h-screen bg-[var(--almost-black-blue)] flex flex-col'>
       <div className='p-4 mb-[30%]'>
@@ -24,34 +41,10 @@ function App() {
           we're launching soon
         </h1>
         <div className='flex gap-4'>
-          <div className='pt-[20%] flex flex-col items-center relative'>
-            <div className={upperSquareClass}></div>
-            <div className={seperatorClass}></div>
-            <div className={secondSquareClass}></div>
-            <p className={titleClass}>days</p>
-            <p className='text-[var(--soft-red)] text-4xl absolute top-1/2'>{timer.days}</p>
-          </div>
-          <div className='pt-[20%] flex flex-col items-center relative'>
-            <div className={upperSquareClass}></div>
-            <div className={seperatorClass}></div>
-            <div className={secondSquareClass}></div>
-            <p className={titleClass}>hours</p>
-            <p className='text-[var(--soft-red)] text-4xl absolute top-1/2'>{timer.hours}</p>
-          </div>
-          <div className='pt-[20%] flex flex-col items-center relative'>
-            <div className={upperSquareClass}></div>
-            <div className={seperatorClass}></div>
-            <div className={secondSquareClass}></div>
-            <p className={titleClass}>minutes</p>
-            <p className='text-[var(--soft-red)] text-4xl absolute top-1/2'>{timer.minutes}</p>
-          </div>
-          <div className='pt-[20%] flex flex-col items-center relative'>
-            <div className={upperSquareClass}></div>
-            <div className={seperatorClass}></div>
-            <div className={secondSquareClass}></div>
-            <p className={titleClass}>seconds</p>
-            <p className='text-[var(--soft-red)] text-4xl absolute top-1/2'>{timer.seconds}</p>
-          </div>
+          <Timer value={timer.days} />
+          <Timer value={timer.hours} />
+          <Timer value={timer.minutes} />
+          <Timer value={timer.seconds} />
         </div>
       </div>
       <div className='footer flex justify-center items-center h-[160px] mt-auto'>
