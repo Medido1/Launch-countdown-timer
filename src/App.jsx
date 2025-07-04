@@ -41,10 +41,10 @@ function App() {
           we're launching soon
         </h1>
         <div className='flex gap-4'>
-          <Timer value={timer.days} />
-          <Timer value={timer.hours} />
-          <Timer value={timer.minutes} />
-          <Timer value={timer.seconds} />
+          <Timer value={timer.days} label={"days"}/>
+          <Timer value={timer.hours} label={"hours"}/>
+          <Timer value={timer.minutes} label={"minutes"}/>
+          <Timer value={timer.seconds} label={"seconds"}/>
         </div>
       </div>
       <div className='footer flex justify-center items-center h-[160px] mt-auto'>
