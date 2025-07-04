@@ -7,11 +7,23 @@
 
   /* Neutral */
   --white: hsl(0, 0%, 100%);
-  --dark-desaturated-blue: hsl(236, 21%, 26%);
+  --dark-desaturated-blue: hsl(236, 21%, 22%);
+  --dark-desaturated-blue2: hsl(236, 21%, 26%);
   --very-dark-blue: hsl(235, 16%, 14%);
   --almost-black-blue: hsl(234, 17%, 12%);
 }
 
 .font_red {
   font-family: "Red Hat Text", sans-serif;
+}
+
+.main_bg {
+  background-image: url('./assets/bg-stars.svg');
+  background-repeat: repeat;
+}
+
+.footer {
+  background-image: url('./assets/pattern-hills.svg');
+  background-size: cover;
+  background-position: 27%;
 }
