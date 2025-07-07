@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import facebookIcon from "./assets/icon-facebook.svg"
-import pinterestIcon from "./assets/icon-pinterest.svg"
-import instagramIcon from "./assets/icon-instagram.svg"
 import { useEffect } from 'react'
 import Timer from './components/Timer'
+import Footer from './components/Footer'
 
 function App() {
   const timerStart = {
@@ -36,8 +34,9 @@ function App() {
 
   return (
     <div className='font_red main_bg min-h-screen bg-[var(--almost-black-blue)] flex flex-col'>
-      <div className='p-4 mb-[30%]'>
-        <h1 className='uppercase text-white text-xl pt-[20%] tracking-[.25rem] text-center'>
+      <div className='p-4 mb-[30%] md:mb-0 flex flex-col items-center'>
+        <h1 className='uppercase text-white text-xl md:text-2xl pt-[20%] md:pt-[10%] tracking-[.25rem] 
+        text-center md:mb-10'>
           we're launching soon
         </h1>
         <div className='flex gap-4'>
@@ -47,13 +46,7 @@ function App() {
           <Timer value={timer.seconds} label={"seconds"}/>
         </div>
       </div>
-      <div className='footer flex justify-center items-center h-[160px] mt-auto'>
-        <div className='flex gap-6 mt-[20%]'>
-          <img src={facebookIcon} alt="facebook" />
-          <img src={pinterestIcon} alt="pinterest" />
-          <img src={instagramIcon} alt="instagram" />
-        </div>
-      </div>
+      <Footer />
     </div>
   )
 }

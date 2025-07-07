@@ -1,12 +1,43 @@
-# React + Vite
+# Frontend Mentor - Launch countdown timer solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Launch countdown timer challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-).
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-## Expanding the ESLint configuration
+## Overview
+### The challenge
+Users should be able to:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- See hover states for all interactive elements on the page
+- See a live countdown timer that ticks down every second (start the count at 14 days)
+
+### Links
+
+- Solution URL: [solution](https://github.com/Medido1/Launch-countdown-timer)
+- Live Site URL: [live site](https://lauchcountown.netlify.app/)
+
+### Screenshot
+  ![](/public/desktop.png)
+## My process
+
+### Built with
+
+- React
+- Tailwindcss
+- Flexbox
+- Grid
+- Mobile-first workflow
+- Vanilla css
+
+## Author
+
+- Frontend Mentor - [@Medido1](https://www.frontendmentor.io/profile/Medido1)
+- GitHub - [@Medido1](https://github.com/Medido1)
